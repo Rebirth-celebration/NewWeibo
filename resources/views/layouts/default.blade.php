@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title>NewWeibo App @yield('title','NewWeibo App')</title>
-    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="{{ mix('css/app.css') }}">
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
-        <a class="navbar-brand" href="">NewWeibo App</a>
+        <a class="navbar-brand" href="{{ route('home') }}">NewWeibo App</a>
         <ul class="navbar-nav justify-content-end">
-            <li class="nav-item"><a class="nav-link" href="">帮助</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ route('help') }}">帮助</a></li>
             <li class="nav-item"><a class="nav-link" href="">登录</a></li>
         </ul>
     </div>
