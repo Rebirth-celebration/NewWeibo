@@ -2,7 +2,7 @@
     <div class="container">
         <a class="navbar-brand" href="{{ route('home') }}">NewWeibo App</a>
         <ul class="navbar-nav justify-content-end">
-            @if(Auth::check()) {
+            @if(Auth::check())
             <li class="nav-item"><a class="nav-link" href="{{ route('help') }}">用户列表</a></li>
             <li class="nav-item dropdown">
                 <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
@@ -11,7 +11,7 @@
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="{{ route('users.show',Auth::user()) }}">个人中心</a>
-                    <a class="dropdown-item" href="">编辑资料</a>
+                    <a class="dropdown-item" href="{{ route('users.edit',Auth::user()) }}">编辑资料</a>
                     <div class="dropdown-divider"></div>
                     <form action="{{ route('logout') }}" method="POST">
                         {{ csrf_field() }}
@@ -21,7 +21,6 @@
                     </form>
                 </div>
             </li>
-            }
             @else
                 <li class="nav-item"><a class="nav-link" href="{{ route('help') }}">帮助</a></li>
                 <li class="nav-item"><a class="nav-link" href="{{ route('login') }}">登录</a></li>
