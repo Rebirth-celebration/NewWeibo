@@ -26,3 +26,14 @@ Route::post('login','SessionsController@store')->name('login');
 Route::delete('logout','SessionsController@destroy')->name('logout');
 
 Route::get('signup/confirm/{token}','UsersController@confirmEmail')->name('confirm_email');
+
+Route::group(['prefix' => 'password', 'namespace' => 'Auth'], function () {
+    Route::get('reset', 'ForgotPasswordController@showLinkRequestForm')
+        ->name('password.request');
+    Route::post('email', 'ForgotPasswordController@sendResetLinkEmail')
+        ->name('password.email');
+    Route::get('reset/{token}', 'ResetPasswordController@showResetForm')
+        ->name('password.reset');
+    Route::post('reset', 'ResetPasswordController@reset')
+        ->name('password.update');
+});
