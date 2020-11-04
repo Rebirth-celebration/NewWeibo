@@ -37,3 +37,5 @@ Route::group(['prefix' => 'password', 'namespace' => 'Auth'], function () {
     Route::post('reset', 'ResetPasswordController@reset')
         ->name('password.update');
 });
+
+Route::resource('statuses','StatusesController',['only'=>['store','destroy']]);
