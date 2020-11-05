@@ -28,6 +28,7 @@
                                 {!! $statuses->render() !!}
                             </div>
                         @else
+                            <hr>
                             <p>
                                 没有数据！
                             </p>
